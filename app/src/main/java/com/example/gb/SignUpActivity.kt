@@ -41,7 +41,7 @@ class SignUpActivity : AppCompatActivity() {
     fun main(view: View) {
         if (email.text.toString().isNotEmpty() && password.text.toString().isNotEmpty() && name.text.toString().isNotEmpty()) {
             if (EmailValid((email.text.toString()))) {
-                val intent = Intent(this, CategoryActivity::class.java)
+                val intent = Intent(this, MenuActivity::class.java)
                 startActivity(intent)
             }
             else{
