@@ -3,15 +3,18 @@ package com.example.gb
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import java.util.regex.Pattern
 
 class SignUpActivity : AppCompatActivity() {
     lateinit var email: EditText
     lateinit var password: EditText
     lateinit var name: EditText
+    lateinit var pattern: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,13 +22,18 @@ class SignUpActivity : AppCompatActivity() {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password)
         name = findViewById(R.id.name)
+
     }
 
-    val paternt =("[a-z0-9]{1,256}" +
+    val paternt = (
+            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,50}" +
             "\\@" +
-            "[a-z]{1,10}" +
+            "[a-z][a-z\\-]{0,8}" +
+            "(" +
             "\\." +
-            "[a-z]{1,3}")
+            "[a-z][a-z\\-]{0,6}" +
+            ")+"
+        );
     fun EmailValid (email:String):Boolean {
         return Pattern.compile(paternt).matcher(email).matches()
     }
@@ -36,9 +44,22 @@ class SignUpActivity : AppCompatActivity() {
                 val intent = Intent(this, CategoryActivity::class.java)
                 startActivity(intent)
             }
+            else{
+                val alert2 = AlertDialog.Builder(this)
+                    .setTitle("Ошибка")
+                    .setMessage("Неверный Email")
+                    .setPositiveButton("Ок",null)
+                    .create()
+                    .show()
+            }
         }
         else{
-            Toast.makeText(this, "Ошибка", Toast.LENGTH_SHORT).show()
+            val alert = AlertDialog.Builder(this)
+                .setTitle("Ошибка")
+                .setMessage("Заполните все поля")
+                .setPositiveButton("Ок",null)
+                .create()
+                .show()
         }
     }
 

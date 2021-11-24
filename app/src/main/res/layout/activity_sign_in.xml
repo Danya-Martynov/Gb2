@@ -20,13 +20,13 @@
         app:srcCompat="@drawable/gb" />
 
     <EditText
-        android:id="@+id/email2"
+        android:id="@+id/pass2"
         android:layout_width="372dp"
         android:layout_height="52dp"
         android:background="@drawable/solid1"
         android:ems="10"
         android:fontFamily="@font/russo_one_v"
-        android:hint="  E-mail"
+        android:hint="  Пароль"
         android:inputType="textPersonName"
         android:paddingLeft="9dp"
         android:text=""
@@ -36,17 +36,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password2"
+        app:layout_constraintTop_toBottomOf="@+id/emails"
         app:layout_constraintVertical_bias="0.053" />
 
     <EditText
-        android:id="@+id/password2"
+        android:id="@+id/emails"
         android:layout_width="372dp"
         android:layout_height="52dp"
         android:background="@drawable/solid1"
         android:ems="10"
         android:fontFamily="@font/russo_one_v"
-        android:hint="  Пароль"
+        android:hint="  Email"
         android:inputType="textPersonName"
         android:paddingLeft="9dp"
         android:text=""
@@ -65,12 +65,13 @@
         android:layout_height="42dp"
         android:background="@drawable/solid2"
         android:fontFamily="@font/russo_one_v"
+        android:onClick="main"
         android:text="Sing-in"
         android:textAllCaps="false"
         android:textSize="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email2"
+        app:layout_constraintTop_toBottomOf="@+id/pass2"
         app:layout_constraintVertical_bias="0.16" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,17 @@
 package com.example.gb
 
+import android.provider.ContactsContract
+
 data class guide(val title:String, val descr:String, val image:Int)
+
+data class login(val id:String,
+                 val email:String,
+                 val nickname:String,
+                 val avatar:String,
+                 val token:String)
+
+
+
 
 object List {
     val list = arrayListOf(
