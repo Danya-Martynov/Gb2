@@ -54,8 +54,6 @@ class SignInActivity : AppCompatActivity() {
                         }
                         else{
                             Toast.makeText(this@SignInActivity, "Неверный пароль", Toast.LENGTH_SHORT).show()
-                            val intent = Intent(this@SignInActivity, MenuActivity::class.java)
-                            startActivity(intent)
                         }
                     }
                     override fun onFailure(call: Call<login>, t: Throwable) {
